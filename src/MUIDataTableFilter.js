@@ -143,7 +143,7 @@ class MUIDataTableFilter extends React.Component {
         <div className={classes.checkboxList} key={index}>
           <FormGroup>
             <Typography variant="caption" className={classes.checkboxListTitle}>
-              {column.name}
+              {column.label || column.name}
             </Typography>
             {filterData[index].map((filterColumn, filterIndex) => (
               <FormControlLabel
@@ -184,7 +184,7 @@ class MUIDataTableFilter extends React.Component {
         {columns.map((column, index) =>
           column.filter ? (
             <FormControl className={classes.selectFormControl} key={index}>
-              <InputLabel htmlFor={column.name}>{column.name}</InputLabel>
+              <InputLabel htmlFor={column.name}>{column.label || column.name}</InputLabel>
               <Select
                 value={filterList[index].toString() || textLabels.all}
                 name={column.name}
@@ -216,7 +216,7 @@ class MUIDataTableFilter extends React.Component {
         {columns.map((column, index) =>
           column.filter ? (
             <FormControl className={classes.selectFormControl} key={index}>
-              <InputLabel htmlFor={column.name}>{column.name}</InputLabel>
+              <InputLabel htmlFor={column.name}>{column.label || column.name}</InputLabel>
               <Select
                 multiple
                 value={filterList[index] || []}

@@ -88,7 +88,7 @@ class MUIDataTableViewCol extends React.Component {
                       value={column.name}
                     />
                   }
-                  label={column.name}
+                  label={column.label || column.name}
                 />
               )
             );
